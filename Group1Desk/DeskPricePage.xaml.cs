@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Group1Desk
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DeskPricePage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class DeskPricePage : Page
     {
-        public MainWindow()
+        public DeskPricePage()
         {
             InitializeComponent();
         }
