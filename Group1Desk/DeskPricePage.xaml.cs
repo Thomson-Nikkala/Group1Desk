@@ -23,13 +23,18 @@ namespace Group1Desk
         public DeskPricePage()
         {
             InitializeComponent();
-          //  Demo1_btn.Click += new RoutedEventHandler(Demo1_btn_Click);
         }
 
-       // private void Demo1_btn_Click(object sender, RoutedEventArgs e)
-    //    {
-            //throw new NotImplementedException();
-      //      MessageBox.Show(Demo1_btn.Name + " was clicked");
-      //  }
+        // Custom constructor to pass order data
+        public DeskPricePage(object yourOrder):this()
+        {
+            // Bind to order data
+            this.DataContext = yourOrder;
+            
+        }
+
+      
+
+
     }
 }
