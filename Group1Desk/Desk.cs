@@ -10,7 +10,6 @@ namespace Group1Desk
 
     class Desk
     {
-        public int deskID { get; set; }
         public double width { get; set; }
         public double length { get; set; }
         public int drawers { get; set; }

@@ -8,7 +8,105 @@
       d:DesignHeight="480" d:DesignWidth="600"
       Title="Group1Desk - Display Prices">
 
-    <Grid>
-        
-    </Grid>
+
+
+    <FlowDocumentReader>
+        <FlowDocument>
+
+            <Table CellSpacing="6">
+
+                <Table.Columns>
+                    <TableColumn/>
+                    <TableColumn/>
+                </Table.Columns>
+
+                <TableRowGroup>
+
+                    <!-- Title row for the table. -->
+                    <TableRow Background="SkyBlue">
+                        <TableCell ColumnSpan="2" TextAlignment="Center">
+                            <Paragraph FontSize="24pt" FontWeight="Bold">Custom Desk Price Quote</Paragraph>
+                        </TableCell>
+                    </TableRow>
+
+                    <!-- Blank row -->
+                    <TableRow>
+                        <TableCell>
+
+                        </TableCell>
+                    </TableRow>
+
+                    <!-- Rows for sub-prices. -->
+                    <TableRow>
+                        <TableCell>
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Base Desk Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>{Binding Source={StaticResource yourOrder}, Path=BasePrice}</Paragraph>
+                        </TableCell>
+                     
+                    
+                    </TableRow>
+                    <TableRow Background="lightgray">
+                        <TableCell>
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Extra Drawers Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>yourOrder.getDrawersPrice()</Paragraph>
+                        </TableCell>
+                
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Surface Material Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>yourOrder.getSurfaceMaterialPrice()</Paragraph>
+                        </TableCell>
+                
+                     
+                    </TableRow>
+                    <TableRow Background="lightgray">
+                        <TableCell>
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Desk Size Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>yourOrder.getSurfaceAreaPrice()</Paragraph>
+                        </TableCell>
+                
+                    </TableRow>
+
+                    <TableRow >
+                        <TableCell>
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Rush Delivery Fee</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>yourOrder.getSpeedPrice()</Paragraph>
+                        </TableCell>
+                    </TableRow>
+
+                    <TableRow >
+                        <TableCell >
+                         
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>--------------------</Paragraph>
+                        </TableCell>
+                    </TableRow>
+                    
+                    <TableRow Background="SkyBlue">
+                        <TableCell >
+                            <Paragraph FontSize="14pt" FontWeight="Bold">Total Desk Price</Paragraph>
+                        </TableCell>
+                        <TableCell>
+                            <Paragraph>yourOrder.getTotalPrice()</Paragraph>
+                        </TableCell>
+                    </TableRow>
+
+                </TableRowGroup>
+            </Table>
+        </FlowDocument>
+    </FlowDocumentReader>
+    
+    
 </Page>
