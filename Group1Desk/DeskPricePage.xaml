@@ -19,7 +19,7 @@
                     </Table.Columns>
                     <TableRowGroup>
                         <!-- Title row for the table. -->
-                        <TableRow Background="SkyBlue">
+                        <TableRow Background="#FF5BB12E">
                             <TableCell ColumnSpan="2" TextAlignment="Center">
                                 <Paragraph FontSize="20pt" FontWeight="Bold">Custom Desk Price Quote</Paragraph>
                             </TableCell>
@@ -78,7 +78,7 @@
                                 <Paragraph>--------------------</Paragraph>
                             </TableCell>
                         </TableRow>
-                        <TableRow Background="SkyBlue">
+                        <TableRow Background="#FF5BB12E">
                             <TableCell >
                                 <Paragraph FontSize="14pt" FontWeight="Bold">Total Desk Price</Paragraph>
                             </TableCell>
@@ -93,7 +93,8 @@
         
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="268,374,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
         <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="22,368,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="478,374,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="478,374,0,0" VerticalAlignment="Top" 
+                Width="100" Click="button_Click"/>
 
 
     </Grid>

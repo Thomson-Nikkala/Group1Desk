@@ -33,8 +33,10 @@ namespace Group1Desk
             
         }
 
-      
-
-
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            // save desk and order to file here
+            Environment.Exit(0);   // end program
+        }
     }
 }
