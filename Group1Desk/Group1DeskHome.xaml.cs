@@ -152,8 +152,8 @@ namespace Group1Desk
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DeskPricePage DeskPricePage = new DeskPricePage();
-            this.NavigationService.Navigate(DeskPricePage);
+            DeskPricePage deskPricePage = new DeskPricePage();
+            NavigationService.Navigate(deskPricePage);
         }
     }
 }

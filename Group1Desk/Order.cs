@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace Group1Desk
         {
             int i;
             int j;
-            int[,] rushOrderArray;
+            int[,] rushOrderArray = new int[3,3];
             double surfaceArea = yourDesk.getSurfaceArea();
 
             //read rushOrderArray in here
@@ -76,6 +77,28 @@ namespace Group1Desk
             int totalPrice;
             totalPrice = BasePrice + this.getSurfaceAreaPrice() + this.getDrawersPrice() + this.getSurfaceTypePrice() + this.getSpeedPrice();
             return totalPrice;
+        }
+
+        // read in the text file to populate rushOrderArray    
+        private static void ReadRushOrderPrices(ref int[,] rushOrderArray)
+        {
+            try
+            {
+                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                int readLineCounter = 0;
+                for (int i = 0; i < rushOrderArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < rushOrderArray.GetLength(1); j++)
+                    {
+                        rushOrderArray[i, j] = int.Parse(rushPrices[readLineCounter]) * 100; //adjusting for cents
+                        readLineCounter++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
