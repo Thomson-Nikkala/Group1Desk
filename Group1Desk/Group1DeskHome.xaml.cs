@@ -20,12 +20,13 @@ namespace Group1Desk
     /// </summary>
     public partial class Group1DeskHome : Page
     {
+        private Desk yourDesk;
+        private Order yourOrder;
+
         public Group1DeskHome()
         {
             InitializeComponent();
         }
-        string[] materials = new string[3] { "oak", "laminate", "pine" };
-        int[] materialCosts = new int[3] { 200, 100, 50 };
 
         //Get Length of Desk
         private void comboBox_Length(object sender, RoutedEventArgs e)
@@ -54,7 +55,11 @@ namespace Group1Desk
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
+
+            // Initialize length in Desk object.
+            yourDesk.length = length[0];
         }
+
         private void ComboBox_LengthChanged(object sender, SelectionChangedEventArgs e)
         {
             // ... Get the ComboBox.
@@ -63,6 +68,9 @@ namespace Group1Desk
             // ... Set SelectedItem as Window Title.
             string value = comboBox.SelectedItem as string;
             this.Title = "Selected: " + value;
+
+            // Change desk length in Desk object
+            yourDesk.length = int.Parse(value);
         }
         //Get Width of Desk
         private void comboBox_Width(object sender, RoutedEventArgs e)
@@ -85,6 +93,9 @@ namespace Group1Desk
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
+
+            //Initialize width in Desk object
+            yourDesk.width = width[0];
         }
         private void ComboBox_WidthChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -94,6 +105,9 @@ namespace Group1Desk
             // ... Set SelectedItem as Window Title.
             string value = comboBox.SelectedItem as string;
             this.Title = "Selected: " + value;
+
+            // Change desk width in Desk object
+            yourDesk.width = int.Parse(value);
         }
         //Get Material of Desk
         private void comboBox_Material(object sender, RoutedEventArgs e)
@@ -112,6 +126,9 @@ namespace Group1Desk
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
+
+            //initialize desk material in Desk object
+            yourDesk.surfaceType = SurfaceMaterial.oak;
         }
         private void ComboBox_MaterialChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -121,6 +138,12 @@ namespace Group1Desk
             // ... Set SelectedItem as Window Title.
             string value = comboBox.SelectedItem as string;
             this.Title = "Selected: " + value;
+
+            // Set desk material in Desk object
+            SurfaceMaterial surface;
+            SurfaceMaterial.TryParse(value, out surface);
+            yourDesk.surfaceType = surface;
+
         }
         //Get Shipping Length
         private void comboBox_Shipping(object sender, RoutedEventArgs e)
@@ -140,7 +163,11 @@ namespace Group1Desk
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
+
+            // Initialize shipTime in Order object
+            yourOrder.shipTime = shipping[0];
         }
+
         private void ComboBox_ShippingChanged(object sender, SelectionChangedEventArgs e)
         {
             // ... Get the ComboBox.
@@ -149,10 +176,18 @@ namespace Group1Desk
             // ... Set SelectedItem as Window Title.
             string value = comboBox.SelectedItem as string;
             this.Title = "Selected: " + value;
+
+            // Change shipTime in Order object
+            yourOrder.shipTime = int.Parse(value);
         }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DeskPricePage deskPricePage = new DeskPricePage();
+            Desk yourDesk = new Desk();
+            Order yourOrder = new Order();
+
+
+            DeskPricePage deskPricePage = new DeskPricePage(this.yourDesk, this.yourOrder);
             NavigationService.Navigate(deskPricePage);
         }
     }

@@ -10,14 +10,14 @@ namespace Group1Desk
 
     class Desk
     {
-        public double width { get; set; }
-        public double length { get; set; }
+        public int width { get; set; }
+        public int length { get; set; }
         public int drawers { get; set; }
         public SurfaceMaterial surfaceType { get; set; }
 
-        public double getSurfaceArea()
+        public int getSurfaceArea()
         {
-            double area;
+            int area;
             area = width * length;
             return area;
         }

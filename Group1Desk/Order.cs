@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Group1Desk
 {
-    enum OrderSpeed { noRush = 1, threeDay, fiveDay, sevenDay }
 
     class Order
     {
         public Desk yourDesk { get; set; }
-        public OrderSpeed speed { get; set; }
+        public int shipTime { get; set; }
         public static int BasePrice = 20000;
 
         public int getSurfaceAreaPrice()
@@ -30,7 +29,8 @@ namespace Group1Desk
 
         public int getSurfaceTypePrice()
         {
-            switch (yourDesk.surfaceType)
+            SurfaceMaterial surface = yourDesk.surfaceType;
+            switch (surface)
             {
                 case SurfaceMaterial.laminate:
                     return 10000;
@@ -52,13 +52,13 @@ namespace Group1Desk
 
             //read rushOrderArray in here
 
-            switch (speed)
+            switch (shipTime)  // shipping time in days
             {
-                case OrderSpeed.noRush:
+                case 14:
                     return 0;
-                case OrderSpeed.threeDay: i = 0; break;
-                case OrderSpeed.fiveDay: i = 1; break;
-                case OrderSpeed.sevenDay: i = 2; break;
+                case 3: i = 0; break;
+                case 5: i = 1; break;
+                case 7: i = 2; break;
                 default:  // this should never occur
                     return 0;
             }

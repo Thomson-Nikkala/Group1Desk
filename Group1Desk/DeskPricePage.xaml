@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Group1Desk"
       mc:Ignorable="d" 
-      d:DesignHeight="480" d:DesignWidth="600"
+      d:DesignHeight="500" d:DesignWidth="600"
       Title="Group1Desk - Display Prices">
 
 
@@ -91,9 +91,9 @@
             </FlowDocument>
         </FlowDocumentReader>
         
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="268,374,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="22,368,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="478,374,0,0" VerticalAlignment="Top" 
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="264,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
+        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="29,332,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="462,338,0,0" VerticalAlignment="Top" 
                 Width="100" Click="button_Click"/>
 
 

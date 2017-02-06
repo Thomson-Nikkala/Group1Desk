@@ -18,18 +18,23 @@ namespace Group1Desk
     /// <summary>
     /// Interaction logic for DeskPricePage.xaml
     /// </summary>
+    /// 
+   
     public partial class DeskPricePage : Page
     {
+        private Desk yourDesk;
+        private Order yourOrder;
+
         public DeskPricePage()
         {
             InitializeComponent();
         }
 
-        // Custom constructor to pass order data
-        public DeskPricePage(object yourOrder):this()
+        // Custom constructor to pass order and desk data
+        public DeskPricePage(Desk yourDesk, Order yourOrder)
         {
             // Bind to order data
-            this.DataContext = yourOrder;
+            // this.DataContext = yourOrder;
             
         }
 
