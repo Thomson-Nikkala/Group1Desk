@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Group1Desk
 {
 
-    class Order
+    public class Order
     {
         public Desk yourDesk { get; set; }
         public int shipTime { get; set; }

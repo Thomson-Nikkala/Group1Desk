@@ -187,7 +187,7 @@ namespace Group1Desk
             Order yourOrder = new Order();
 
 
-            DeskPricePage deskPricePage = new DeskPricePage(this.yourDesk, this.yourOrder);
+            DeskPricePage deskPricePage = new DeskPricePage(yourDesk, yourOrder);
             NavigationService.Navigate(deskPricePage);
         }
     }
