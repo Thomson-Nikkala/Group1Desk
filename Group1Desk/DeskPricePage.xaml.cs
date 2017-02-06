@@ -22,19 +22,18 @@ namespace Group1Desk
    
     public partial class DeskPricePage : Page
     {
-        private Desk yourDesk;
-        private Order yourOrder;
 
         public DeskPricePage()
         {
             InitializeComponent();
+            
         }
 
-        // Custom constructor to pass order and desk data
-        public DeskPricePage(Desk yourDesk, Order yourOrder)
+        // Custom constructor to pass order data
+        public DeskPricePage(Order yourOrder)
         {
             // Bind to order data
-            // this.DataContext = yourOrder;
+            DataContext = yourOrder;
             
         }
 

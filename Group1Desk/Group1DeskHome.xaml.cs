@@ -20,8 +20,21 @@ namespace Group1Desk
     /// </summary>
     public partial class Group1DeskHome : Page
     {
-        private Desk yourDesk;
-        private Order yourOrder;
+        //  Initialize Desk object with default values
+        public static Desk yourDesk = new Desk
+        {
+            length = 24,
+            width = 24,
+            drawers = 0,
+            surfaceType = SurfaceMaterial.oak
+        };
+
+        // Initialize Order object with default values
+        public static Order yourOrder = new Order()
+        {
+            shipTime = 14,
+            thisDesk = yourDesk
+        };
 
         public Group1DeskHome()
         {
@@ -66,11 +79,12 @@ namespace Group1Desk
             var comboBox = sender as ComboBox;
 
             // ... Set SelectedItem as Window Title.
+          
             string value = comboBox.SelectedItem as string;
             this.Title = "Selected: " + value;
 
             // Change desk length in Desk object
-            yourDesk.length = int.Parse(value);
+            //yourDesk.length = int.Parse(value);
         }
         //Get Width of Desk
         private void comboBox_Width(object sender, RoutedEventArgs e)
@@ -107,7 +121,7 @@ namespace Group1Desk
             this.Title = "Selected: " + value;
 
             // Change desk width in Desk object
-            yourDesk.width = int.Parse(value);
+            //yourDesk.width = int.Parse(value);
         }
         //Get Material of Desk
         private void comboBox_Material(object sender, RoutedEventArgs e)
@@ -178,7 +192,7 @@ namespace Group1Desk
             this.Title = "Selected: " + value;
 
             // Change shipTime in Order object
-            yourOrder.shipTime = int.Parse(value);
+            //yourOrder.shipTime = int.Parse(value);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -187,7 +201,7 @@ namespace Group1Desk
             Order yourOrder = new Order();
 
 
-            DeskPricePage deskPricePage = new DeskPricePage(yourDesk, yourOrder);
+            DeskPricePage deskPricePage = new DeskPricePage();
             NavigationService.Navigate(deskPricePage);
         }
     }

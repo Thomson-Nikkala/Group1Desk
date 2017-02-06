@@ -10,13 +10,13 @@ namespace Group1Desk
 
     public class Order
     {
-        public Desk yourDesk { get; set; }
+        public Desk thisDesk { get; set; }
         public int shipTime { get; set; }
         public static int BasePrice = 20000;
 
         public int getSurfaceAreaPrice()
         {
-            double surfaceArea=yourDesk.getSurfaceArea();
+            double surfaceArea=thisDesk.getSurfaceArea();
             if (surfaceArea <= 1000)
                 return 0;
             else return (int)(surfaceArea - 1000) * 500;
@@ -24,12 +24,12 @@ namespace Group1Desk
         
         public int getDrawersPrice()
         {
-            return 5000 * yourDesk.drawers;
+            return 5000 * thisDesk.drawers;
         }
 
         public int getSurfaceTypePrice()
         {
-            SurfaceMaterial surface = yourDesk.surfaceType;
+            SurfaceMaterial surface = thisDesk.surfaceType;
             switch (surface)
             {
                 case SurfaceMaterial.laminate:
@@ -48,7 +48,7 @@ namespace Group1Desk
             int i;
             int j;
             int[,] rushOrderArray = new int[3,3];
-            double surfaceArea = yourDesk.getSurfaceArea();
+            double surfaceArea = thisDesk.getSurfaceArea();
 
             //read rushOrderArray in here
 
