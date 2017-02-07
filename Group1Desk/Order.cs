@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace Group1Desk
 {
+    public enum OrderSpeed { noRush = 14, threeDay = 3, fiveDay = 5, sevenDay = 7 }
 
     public class Order
     {
-        public Desk thisDesk { get; set; }
-        public int shipTime { get; set; }
+        public Desk yourDesk { get; set; }
+        public OrderSpeed speed { get; set; }
         public static int BasePrice = 20000;
 
         public int getSurfaceAreaPrice()
         {
-            double surfaceArea=thisDesk.getSurfaceArea();
+            int surfaceArea = yourDesk.getSurfaceArea();
             if (surfaceArea <= 1000)
                 return 0;
             else return (int)(surfaceArea - 1000) * 500;
         }
-        
+
         public int getDrawersPrice()
         {
-            return 5000 * thisDesk.drawers;
+            return 5000 * yourDesk.drawers;
         }
 
         public int getSurfaceTypePrice()
         {
-            SurfaceMaterial surface = thisDesk.surfaceType;
-            switch (surface)
+            switch (yourDesk.surfaceType)
             {
                 case SurfaceMaterial.laminate:
                     return 10000;
@@ -48,7 +48,7 @@ namespace Group1Desk
             int i;
             int j;
             int[,] rushOrderArray = new int[3,3];
-            double surfaceArea = thisDesk.getSurfaceArea();
+            double surfaceArea = yourDesk.getSurfaceArea();
 
             //read rushOrderArray 
             try
@@ -69,13 +69,13 @@ namespace Group1Desk
                 Console.WriteLine(e.Message);
             }
 
-            switch (shipTime)  // shipping time in days
+            switch (speed)
             {
-                case 14:
+                case OrderSpeed.noRush:
                     return 0;
-                case 3: i = 0; break;
-                case 5: i = 1; break;
-                case 7: i = 2; break;
+                case OrderSpeed.threeDay: i = 0; break;
+                case OrderSpeed.fiveDay: i = 1; break;
+                case OrderSpeed.sevenDay: i = 2; break;
                 default:  // this should never occur
                     return 0;
             }

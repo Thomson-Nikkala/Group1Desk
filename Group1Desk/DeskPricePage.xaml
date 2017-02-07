@@ -5,95 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Group1Desk"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="600"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="Group1Desk - Display Prices">
 
-
     <Grid>
-        <FlowDocumentReader>
-            <FlowDocument>
-                <Table CellSpacing="6">
-                    <Table.Columns>
-                        <TableColumn/>
-                        <TableColumn/>
-                    </Table.Columns>
-                    <TableRowGroup>
-                        <!-- Title row for the table. -->
-                        <TableRow Background="#FF5BB12E">
-                            <TableCell ColumnSpan="2" TextAlignment="Center">
-                                <Paragraph FontSize="20pt" FontWeight="Bold">Custom Desk Price Quote</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <!-- Blank row -->
-                        <TableRow>
-                            <TableCell>
-
-                            </TableCell>
-                        </TableRow>
-                        <!-- Rows for sub-prices. -->
-                        <TableRow>
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Base Desk Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@BasePrice}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="lightgray">
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Extra Drawers Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getDrawersPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Surface Material Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSurfaceMaterialPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="lightgray">
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Desk Size Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSurfaceAreaPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Rush Delivery Fee</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSpeedPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>--------------------</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="#FF5BB12E">
-                            <TableCell >
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Total Desk Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getTotalPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                    </TableRowGroup>
-                </Table>
-            </FlowDocument>
-        </FlowDocumentReader>
-        
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="264,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="29,332,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="462,338,0,0" VerticalAlignment="Top" 
+        <Label x:Name="BasePrice" Content="Label" HorizontalAlignment="Center"></Label>
+        <Label x:Name="getDrawersPrice" Content="Label" ></Label>
+        <Label x:Name="getSurfaceArea" Content="Label" ></Label>
+        <Label x:Name="getSurfaceAreaPrice" Content="Label" ></Label>
+        <Label x:Name="getSurfaceTypePrice" Content="Label" ></Label>
+        <Label x:Name="getSpeedPrice" Content="Label" ></Label>
+        <Label x:Name="getTotalPrice" Content="Label" ></Label>
+     
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="253,347,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124"/>
+        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="18,341,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="390,347,0,0" VerticalAlignment="Top" 
                 Width="100" Click="button_Click"/>
 
 

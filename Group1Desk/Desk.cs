@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group1Desk
 {
-    public enum SurfaceMaterial { pine, laminate, oak };
+    public enum SurfaceMaterial { pine, laminate, oak, poplar, alder };
     
     public class Desk
     {

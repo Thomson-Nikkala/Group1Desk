@@ -10,21 +10,23 @@
 
     <Grid Margin="0,0,0,51">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center"  Margin="156,50,66,367" TextWrapping="Wrap" VerticalAlignment="Center" Padding="3" FontSize="20" Foreground="Black"  Text="Customize Your Desk:" Width="278"/>
-        <Button x:Name="button" Content="Get Quote"  Margin="181,334,189,73" VerticalAlignment="Center" Height="42" Click="button_Click" Background="#FF5BB12E" Foreground="White" FontWeight="Bold" FontSize="18" Padding="5"/>
-   
+        <Button x:Name="button" Content="Get Quote"  Margin="181,346,189,61" VerticalAlignment="Center" Height="42" Click="button_Click" Background="#FF5BB12E" Foreground="White" FontWeight="Bold" FontSize="18" Padding="5"/>
 
-        <Label x:Name="length" Content="Length:" HorizontalAlignment="Left" Margin="61,108,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+
+        <Label x:Name="thelength" Content="Length:" HorizontalAlignment="Left" Margin="61,119,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,119,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Length" SelectionChanged="ComboBox_LengthChanged"/>
 
-        <Label x:Name="width" Content="Width:" HorizontalAlignment="Left" Margin="61,157,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+        <Label x:Name="thewidth" Content="Width:" HorizontalAlignment="Left" Margin="61,168,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,168,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Width" SelectionChanged="ComboBox_WidthChanged"/>
 
-        <Label x:Name="material" Content="Material:" HorizontalAlignment="Left" Margin="61,209,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+        <Label x:Name="thematerial" Content="Material:" HorizontalAlignment="Left" Margin="61,218,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,220,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Material" SelectionChanged="ComboBox_MaterialChanged"/>
 
-        <Label x:Name="shipping" Content="Shipping Time (days):" HorizontalAlignment="Left" Margin="61,266,0,0" VerticalAlignment="Top" Width="189" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Center" Margin="301,276,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Shipping" SelectionChanged="ComboBox_ShippingChanged"/>
+        <Label x:Name="theshipping" Content="Rush Shipping (in days):" HorizontalAlignment="Left" Margin="61,302,0,0" VerticalAlignment="Top" Width="203" FontSize="18"/>
+        <ComboBox HorizontalAlignment="Center" Margin="301,302,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Shipping" SelectionChanged="ComboBox_ShippingChanged"/>
 
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Center"  Margin="67,10,-40,406" TextWrapping="Wrap" VerticalAlignment="Center" Padding="3" FontSize="20" FontWeight="Bold" Foreground="Black"  Text="Welcome to the Desk Ordering System:" Width="473"/>
+        <TextBlock x:Name="welcome" HorizontalAlignment="Center"  Margin="67,10,-40,406" TextWrapping="Wrap" VerticalAlignment="Center" Padding="3" FontSize="20" FontWeight="Bold" Foreground="Black"  Text="Welcome to the Desk Ordering System:" Width="473"/>
+        <Label x:Name="thedrawers" Content="Drawers:" HorizontalAlignment="Left" Margin="61,262,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+        <ComboBox HorizontalAlignment="Center" Margin="301,264,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Drawers" SelectionChanged="ComboBox_DrawersChanged" RenderTransformOrigin="0.481,2.607"/>
     </Grid>
 </Page>
