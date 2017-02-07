@@ -92,7 +92,7 @@ namespace Group1Desk
         //                string.Format("\"deskLength\":{0},",yourDesk.length),
         //                string.Format("\"numDrawers\":{0},",yourDesk.drawers),
         //                string.Format("\"surfaceMaterial\":\"{0}\",",surfaceMaterial),
-          //              string.Format("\"shippingSpeed\":\"{0}\",",shippingSpeed),
+        //              string.Format("\"shippingSpeed\":\"{0}\",",shippingSpeed),
        //                 string.Format("\"BaseDeskPrice\":200,"),
        //                 string.Format("\"priceFromSurfaceArea\":{0},",priceFromSurfaceArea),
         //                string.Format("\"priceFromDrawers\":{0},",priceFromDrawers),
@@ -102,7 +102,7 @@ namespace Group1Desk
          //           };
          
             //write string to file
-          //  System.IO.File.WriteAllLines(@outputFileName, lines);
+          // System.IO.File.WriteAllLines(@"orders.txt", lines);
         
             Environment.Exit(0);   // end program
         }
