@@ -19,7 +19,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -59,10 +58,7 @@
         <Label x:Name="getTotalPrice" Content="Label" Grid.Column="1" Grid.Row="7" FontSize="12pt" Background="LightGray" HorizontalContentAlignment="Right"/>
 
         <!-- Row 8, Export -->
-        <Label x:Name="label" Content="Enter filename to save order" Grid.Column="0" Grid.Row="8" FontSize="12pt" FontWeight="Bold" Background="White" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="textBox" Grid.Column="1" Grid.Row="8" Height="50" Width="300" FontSize="12px" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="5,5,5,5" />
-
-        <!-- Row 9, Button -->
-        <Button x:Name="button" Content="Save Order" Grid.Column="1" Grid.Row="9" Click="button_Click" FontSize="14pt" FontWeight="Bold" Background="#FF5BB12E" Margin="5,5,5,5"/>
+        
+        <Button x:Name="button" Content="Save Order" Grid.Column="1" Grid.Row="8" Click="button_Click" FontSize="14pt" FontWeight="Bold" Background="#FF5BB12E" Margin="5,5,5,5"/>
     </Grid>
 </Page>

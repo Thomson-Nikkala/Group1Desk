@@ -77,7 +77,7 @@ namespace Group1Desk
                 case OrderSpeed.fiveDay: i = 1; break;
                 case OrderSpeed.sevenDay: i = 2; break;
                 default:  // this should never occur
-                    return 0;
+                return 0;
             }
 
             if (surfaceArea < 1000)
@@ -86,8 +86,8 @@ namespace Group1Desk
                 j = 1;
             else j = 2;
 
-            /*return rushOrderArray[i, j];*/
-            return 5;
+            return rushOrderArray[i, j];
+           
         }
 
         public int getTotalPrice()
