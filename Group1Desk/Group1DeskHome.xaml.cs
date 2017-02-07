@@ -32,7 +32,7 @@ namespace Group1Desk
         // Initialize Order object with default values
         public static Order yourOrder = new Order()
         {
-            shipTime = 14,
+            shipTime = 3,
             thisDesk = yourDesk
         };
 
@@ -180,8 +180,8 @@ namespace Group1Desk
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
 
-            // Initialize shipTime in Order object to "no rush"
-            yourOrder.shipTime = shipping[3];
+            // Initialize shipTime in Order object
+            yourOrder.shipTime = shipping[0];
         }
 
         private void ComboBox_ShippingChanged(object sender, SelectionChangedEventArgs e)
