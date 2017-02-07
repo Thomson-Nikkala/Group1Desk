@@ -39,9 +39,12 @@ namespace Group1Desk
             this.order = order;
             this.DataContext = this;
 
-            BasePrice.Content = "Base Desk Price: " + Order.BasePrice;
-            getDrawersPrice.Content = order.yourDesk.drawers + " Added Drawers : " + order.getDrawersPrice();
-
+            BasePrice.Content = Order.BasePrice;
+            getDrawersPrice.Content = order.getDrawersPrice();
+            getSurfaceAreaPrice.Content =  order.getSurfaceAreaPrice();
+            getSurfaceTypePrice.Content =  order.getSurfaceTypePrice();
+            getSpeedPrice.Content = order.getSpeedPrice();
+            getTotalPrice.Content = order.getTotalPrice();
         }
 
         private Desk desk;
@@ -84,7 +87,7 @@ namespace Group1Desk
         {
             // save desk and order to file here
             string[] lines = {
-        //                "{",
+                   "{",
                         string.Format("\"deskWidth\":{0},", order.yourDesk.width),
                         string.Format("\"deskLength\":{0},", order.yourDesk.length),
                         string.Format("\"numDrawers\":{0},", order.yourDesk.drawers),
@@ -96,10 +99,10 @@ namespace Group1Desk
                         string.Format("\"surfaceMaterialFee\":{0},", order.getSurfaceTypePrice()),
                         string.Format("\"deliveryFee\":{0},", order.getSpeedPrice()),
                        string.Format("\"deskPrice\":{0},",order.getTotalPrice()),"}"
-                    };
+            };
          
             //write string to file
-            //System.IO.File.WriteAllLines(order.@outputFileName, lines);
+            System.IO.File.WriteAllLines("output.json", lines);
         
             Environment.Exit(0);   // end program
         }
