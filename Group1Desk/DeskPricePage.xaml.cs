@@ -43,6 +43,8 @@ namespace Group1Desk
             getDrawersPrice.Content = order.getDrawersPrice();
             getSurfaceAreaPrice.Content =  order.getSurfaceAreaPrice();
             getSurfaceTypePrice.Content =  order.getSurfaceTypePrice();
+            getSpeedPrice.Content = order.getSpeedPrice();
+            getTotalPrice.Content = order.getTotalPrice();
         }
 
         private Desk desk;
