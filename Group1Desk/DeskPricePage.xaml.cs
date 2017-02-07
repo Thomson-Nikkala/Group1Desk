@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,10 @@ namespace Group1Desk
     public partial class DeskPricePage : Page
     {
         public DeskPricePage()
-         {
-             InitializeComponent();
-         }
-         
+        {
+            InitializeComponent();
+        }
+
         public DeskPricePage(Desk desk)
         {
             InitializeComponent();
@@ -82,6 +83,24 @@ namespace Group1Desk
         private void button_Click(object sender, RoutedEventArgs e)
         {
             // save desk and order to file here
+       //     string[] lines = {
+        //                "{",
+        //                string.Format("\"deskWidth\":{0},",yourOrder.yourDesk.width),
+        //                string.Format("\"deskLength\":{0},",yourDesk.length),
+        //                string.Format("\"numDrawers\":{0},",yourDesk.drawers),
+        //                string.Format("\"surfaceMaterial\":\"{0}\",",surfaceMaterial),
+          //              string.Format("\"shippingSpeed\":\"{0}\",",shippingSpeed),
+       //                 string.Format("\"BaseDeskPrice\":200,"),
+       //                 string.Format("\"priceFromSurfaceArea\":{0},",priceFromSurfaceArea),
+        //                string.Format("\"priceFromDrawers\":{0},",priceFromDrawers),
+         //               string.Format("\"surfaceMaterialFee\":{0},",surfaceMaterialFee),
+         //               string.Format("\"deliveryFee\":{0},",deliveryFee),
+         //               string.Format("\"deskPrice\":{0},",deskPrice),"}"
+         //           };
+         
+            //write string to file
+          //  System.IO.File.WriteAllLines(@outputFileName, lines);
+        
             Environment.Exit(0);   // end program
         }
     }
