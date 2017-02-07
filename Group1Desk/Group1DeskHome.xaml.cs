@@ -24,33 +24,75 @@ namespace Group1Desk
         {
             InitializeComponent();
         }
-        string[] materials = new string[3] { "oak", "laminate", "pine" };
-        int[] materialCosts = new int[3] { 200, 100, 50 };
+
+        private Desk desk;
+        public Desk yourDesk
+        {
+            get
+            {
+                if (desk == null)
+                {
+                    desk = new Desk();
+                }
+                return desk;
+            }
+            set
+            {
+                desk = value;
+            }
+        }
+
+        private Order order;
+        public Order Ord
+        {
+            get
+
+            {
+                if (order == null)
+                {
+                    order = new Order();
+                    order.yourDesk = yourDesk;
+
+                }
+
+                return order;
+            }
+            set
+            {
+                order = value;
+            }
+        }
+        public int desklength { get; set; }
+        public int deskwidth { get; set; }
+        public int numdrawers { get; set; }
+        public string deskmaterial { get; set; }
+        public int shippingdays { get; set; }
+
 
         //Get Length of Desk
         private void comboBox_Length(object sender, RoutedEventArgs e)
         {
             // Drop down List.
-            List<int> length = new List<int>();
-            length.Add(24);
-            length.Add(28);
-            length.Add(32);
-            length.Add(36);
-            length.Add(40);
-            length.Add(44);
-            length.Add(48);
-            length.Add(52);
-            length.Add(56);
-            length.Add(60);
-            length.Add(64);
-            length.Add(68);
-            length.Add(72);
+            List<int> data = new List<int>();
+            data.Add(24);
+            data.Add(28);
+            data.Add(32);
+            data.Add(36);
+            data.Add(40);
+            data.Add(44);
+            data.Add(48);
+            data.Add(52);
+            data.Add(56);
+            data.Add(60);
+            data.Add(64);
+            data.Add(68);
+            data.Add(72);
 
             // Get the ComboBox reference.
             var comboBox = sender as ComboBox;
 
             // Assign the ItemsSource to the List.
-            comboBox.ItemsSource = length;
+            comboBox.ItemsSource = data;
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
@@ -61,27 +103,31 @@ namespace Group1Desk
             var comboBox = sender as ComboBox;
 
             // ... Set SelectedItem as Window Title.
-            string value = comboBox.SelectedItem as string;
-            this.Title = "Selected: " + value;
+            desklength = int.Parse(comboBox.SelectedItem.ToString());
+            this.Title = "Selected: " + desklength;
+
+            // DeskPricePage desk = new DeskPricePage();
+            Ord.yourDesk.length = desklength;
+
         }
         //Get Width of Desk
         private void comboBox_Width(object sender, RoutedEventArgs e)
         {
             // Drop down List.
-            List<int> width = new List<int>();
-            width.Add(24);
-            width.Add(28);
-            width.Add(32);
-            width.Add(36);
-            width.Add(40);
-            width.Add(44);
-            width.Add(48);
+            List<int> data = new List<int>();
+            data.Add(24);
+            data.Add(28);
+            data.Add(32);
+            data.Add(36);
+            data.Add(40);
+            data.Add(44);
+            data.Add(48);
 
             // Get the ComboBox reference.
             var comboBox = sender as ComboBox;
 
             // Assign the ItemsSource to the List.
-            comboBox.ItemsSource = width;
+            comboBox.ItemsSource = data;
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
@@ -92,23 +138,63 @@ namespace Group1Desk
             var comboBox = sender as ComboBox;
 
             // ... Set SelectedItem as Window Title.
-            string value = comboBox.SelectedItem as string;
-            this.Title = "Selected: " + value;
+            deskwidth = int.Parse(comboBox.SelectedItem.ToString());
+            this.Title = "Selected: " + deskwidth;
+
+            // DeskPricePage desk = new DeskPricePage();
+            order.yourDesk.width = deskwidth;
+
         }
-        //Get Material of Desk
-        private void comboBox_Material(object sender, RoutedEventArgs e)
+        //Get Drawers
+        private void comboBox_Drawers(object sender, RoutedEventArgs e)
         {
             // Drop down List.
-            List<string> material = new List<string>();
-            material.Add("oak");
-            material.Add("laminate");
-            material.Add("pine");
+            List<int> data = new List<int>();
+            data.Add(1);
+            data.Add(2);
+            data.Add(3);
+            data.Add(4);
+            data.Add(5);
+            data.Add(6);
+            data.Add(7);
 
             // Get the ComboBox reference.
             var comboBox = sender as ComboBox;
 
             // Assign the ItemsSource to the List.
-            comboBox.ItemsSource = material;
+            comboBox.ItemsSource = data;
+
+            // Makes the first item selected.
+            comboBox.SelectedIndex = 0;
+        }
+        private void ComboBox_DrawersChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // ... Get the ComboBox.
+            var comboBox = sender as ComboBox;
+
+            // ... Set SelectedItem as Window Title.
+            numdrawers = int.Parse(comboBox.SelectedItem.ToString());
+            this.Title = "Selected: " + numdrawers;
+
+            //DeskPricePage desk = new DeskPricePage();
+            order.yourDesk.drawers = numdrawers;
+        }
+        //Get Material of Desk
+        private void comboBox_Material(object sender, RoutedEventArgs e)
+        {
+            // Drop down List.
+            List<string> data = new List<string>();
+            data.Add(SurfaceMaterial.oak.ToString());
+            data.Add(SurfaceMaterial.pine.ToString());
+            data.Add(SurfaceMaterial.laminate.ToString());
+            data.Add(SurfaceMaterial.poplar.ToString());
+            data.Add(SurfaceMaterial.alder.ToString());
+
+            // Get the ComboBox reference.
+            var comboBox = sender as ComboBox;
+
+            // Assign the ItemsSource to the List.
+            comboBox.ItemsSource = data;
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
@@ -119,24 +205,28 @@ namespace Group1Desk
             var comboBox = sender as ComboBox;
 
             // ... Set SelectedItem as Window Title.
-            string value = comboBox.SelectedItem as string;
-            this.Title = "Selected: " + value;
+            deskmaterial = comboBox.SelectedItem as string;
+            this.Title = "Selected: " + deskmaterial;
+
+
+            //DeskPricePage desk = new DeskPricePage();
+            order.yourDesk.surfaceType = (SurfaceMaterial)Enum.Parse(typeof(SurfaceMaterial), deskmaterial);
         }
         //Get Shipping Length
         private void comboBox_Shipping(object sender, RoutedEventArgs e)
         {
             // Drop down List.
-            List<int> shipping = new List<int>();
-            shipping.Add(3);
-            shipping.Add(5);
-            shipping.Add(7);
-            shipping.Add(14);
+            List<int> data = new List<int>();
+            data.Add(3);
+            data.Add(5);
+            data.Add(7);
+            data.Add(14);
 
             // Get the ComboBox reference.
             var comboBox = sender as ComboBox;
 
             // Assign the ItemsSource to the List.
-            comboBox.ItemsSource = shipping;
+            comboBox.ItemsSource = data;
 
             // Makes the first item selected.
             comboBox.SelectedIndex = 0;
@@ -147,13 +237,20 @@ namespace Group1Desk
             var comboBox = sender as ComboBox;
 
             // ... Set SelectedItem as Window Title.
-            string value = comboBox.SelectedItem as string;
-            this.Title = "Selected: " + value;
+            shippingdays = int.Parse(comboBox.SelectedItem.ToString());
+            this.Title = "Selected: " + shippingdays;
+
+
+
+            //DeskPricePage desk = new DeskPricePage();
+            order.speed = (OrderSpeed)shippingdays;
+
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DeskPricePage DeskPricePage = new DeskPricePage();
+            DeskPricePage DeskPricePage = new DeskPricePage(order);
             this.NavigationService.Navigate(DeskPricePage);
+            //}
         }
     }
 }

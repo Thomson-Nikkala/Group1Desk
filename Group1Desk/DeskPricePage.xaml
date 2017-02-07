@@ -10,93 +10,20 @@
 
 
     <Grid>
-        <FlowDocumentReader>
-            <FlowDocument>
-                <Table CellSpacing="6">
-                    <Table.Columns>
-                        <TableColumn/>
-                        <TableColumn/>
-                    </Table.Columns>
-                    <TableRowGroup>
-                        <!-- Title row for the table. -->
-                        <TableRow Background="#FF5BB12E">
-                            <TableCell ColumnSpan="2" TextAlignment="Center">
-                                <Paragraph FontSize="20pt" FontWeight="Bold">Custom Desk Price Quote</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <!-- Blank row -->
-                        <TableRow>
-                            <TableCell>
 
-                            </TableCell>
-                        </TableRow>
-                        <!-- Rows for sub-prices. -->
-                        <TableRow>
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Base Desk Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@BasePrice}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="lightgray">
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Extra Drawers Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getDrawersPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Surface Material Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSurfaceMaterialPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="lightgray">
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Desk Size Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSurfaceAreaPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell>
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Rush Delivery Fee</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getSpeedPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>--------------------</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow Background="#FF5BB12E">
-                            <TableCell >
-                                <Paragraph FontSize="14pt" FontWeight="Bold">Total Desk Price</Paragraph>
-                            </TableCell>
-                            <TableCell>
-                                <Paragraph>"{Binding Xpath=@getTotalPrice()}"</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                    </TableRowGroup>
-                </Table>
-            </FlowDocument>
-        </FlowDocumentReader>
-        
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="268,374,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
-        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="22,368,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="478,374,0,0" VerticalAlignment="Top" 
+        <TextBox Text="Custom Desk Price Quote" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="193,10,187,439" RenderTransformOrigin="1.556,-10.813"/>
+        <Label x:Name="BasePrice" Content="Label" Width="120" Height="23" Margin="193,52,287,45"/>
+        <Label x:Name="getDrawersPrice" Content="Label" Height="23" Margin="193,87,287,10" Width="120"/>
+        <Label x:Name="getSurfaceArea" Content="Label" Height="23" Width="120" Margin="193,10,287,327" Grid.Row="1" />
+        <Label x:Name="getSurfaceAreaPrice" Content="Label" Height="23"  Width="120" Margin="193,59,287,278" Grid.Row="1"/>
+        <Label x:Name="getSurfaceTypePrice" Content="Label" Height="23" Width="120" Margin="193,100,287,237" Grid.Row="1"/>
+        <Label x:Name="getSpeedPrice" Content="Label" Height="23" Margin="193,128,287,209" Width="120" Grid.Row="1"/>
+        <Label x:Name="getTotalPrice" Content="Label" Height="23" Margin="193,151,287,186" Width="120" Grid.Row="1"/>
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="268,422,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="193"/>
+        <Label x:Name="label" Content="Please enter filename to save order:" FontSize="14px" HorizontalAlignment="Left" Margin="22,416,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Save Order" FontSize="14px" FontWeight="Bold" HorizontalAlignment="Left" Margin="478,422,0,0" VerticalAlignment="Top" 
                 Width="100" Click="button_Click"/>
-
-
     </Grid>
 
 </Page>

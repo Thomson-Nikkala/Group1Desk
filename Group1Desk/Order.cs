@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Group1Desk
 {
-    enum OrderSpeed { noRush = 1, threeDay, fiveDay, sevenDay }
+    public enum OrderSpeed { noRush = 14, threeDay = 3, fiveDay = 5, sevenDay = 7 }
 
-    class Order
+    public class Order
     {
         public Desk yourDesk { get; set; }
         public OrderSpeed speed { get; set; }
@@ -68,7 +68,8 @@ namespace Group1Desk
                 j = 1;
             else j = 2;
 
-            return rushOrderArray[i, j];
+            /*return rushOrderArray[i, j];*/
+            return 5;
         }
 
         public int getTotalPrice()

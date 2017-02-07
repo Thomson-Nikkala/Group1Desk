@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Group1Desk
 {
-    enum SurfaceMaterial { pine, laminate, oak };
+    public enum SurfaceMaterial { pine, laminate, oak, poplar, alder };
 
-    class Desk
+    public class Desk
     {
-        public double width { get; set; }
-        public double length { get; set; }
+        public int width { get; set; }
+        public int length { get; set; }
         public int drawers { get; set; }
         public SurfaceMaterial surfaceType { get; set; }
 
