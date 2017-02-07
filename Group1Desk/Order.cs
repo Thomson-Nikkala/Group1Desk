@@ -13,19 +13,19 @@ namespace Group1Desk
     {
         public Desk yourDesk { get; set; }
         public OrderSpeed speed { get; set; }
-        public static int BasePrice = 20000;
+        public static int BasePrice = 200;
 
         public int getSurfaceAreaPrice()
         {
             int surfaceArea = yourDesk.getSurfaceArea();
             if (surfaceArea <= 1000)
                 return 0;
-            else return (int)(surfaceArea - 1000) * 500;
+            else return (int)(surfaceArea - 1000) * 5;
         }
 
         public int getDrawersPrice()
         {
-            return 5000 * yourDesk.drawers;
+            return 50 * yourDesk.drawers;
         }
 
         public int getSurfaceTypePrice()
@@ -33,11 +33,11 @@ namespace Group1Desk
             switch (yourDesk.surfaceType)
             {
                 case SurfaceMaterial.laminate:
-                    return 10000;
+                    return 100;
                 case SurfaceMaterial.oak:
-                    return 20000;
+                    return 200;
                 case SurfaceMaterial.pine:
-                    return 5000;
+                    return 50;
                 default:  // this should never be triggered
                     return 0;
             }
@@ -59,7 +59,7 @@ namespace Group1Desk
                 {
                     for (int m = 0; m < rushOrderArray.GetLength(1); m++)
                     {
-                        rushOrderArray[k, m] = int.Parse(rushPrices[readLineCounter]) * 100; //adjusting for cents
+                        rushOrderArray[k, m] = int.Parse(rushPrices[readLineCounter]); 
                         readLineCounter++;
                     }
                 }
@@ -107,7 +107,7 @@ namespace Group1Desk
                 {
                     for (int j = 0; j < rushOrderArray.GetLength(1); j++)
                     {
-                        rushOrderArray[i, j] = int.Parse(rushPrices[readLineCounter]) * 100; //adjusting for cents
+                        rushOrderArray[i, j] = int.Parse(rushPrices[readLineCounter]); 
                         readLineCounter++;
                     }
                 }
