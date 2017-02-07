@@ -39,7 +39,7 @@ namespace Group1Desk
             this.DataContext = this;
 
             BasePrice.Content = "Base Desk Price: " + Order.BasePrice;
-            getDrawersPrice.Content = order.getDrawersPrice();
+            getDrawersPrice.Content = order.yourDesk.drawers + " Added Drawers : " + order.getDrawersPrice();
 
         }
 
