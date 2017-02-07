@@ -57,7 +57,7 @@ namespace Group1Desk
             //read rushOrderArray 
             try
             {
-                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                string[] rushPrices = File.ReadAllLines(@"C:\Users\Nikkala\Source\Repos\Group1Desk\Group1Desk\rushOrderPrices.txt");
                 int readLineCounter = 0;
                 for (int k = 0; k < rushOrderArray.GetLength(0); k++)
                 {
