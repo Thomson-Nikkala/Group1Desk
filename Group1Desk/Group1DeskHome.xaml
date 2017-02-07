@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Group1Desk"
-      mc:Ignorable="d" d:DesignWidth="500"
-      Title="Group1Desk - Home" Height="500
-      ">
+      mc:Ignorable="d" 
+      d:DesignWidth="600"
+      Title="Group1Desk - Home" Height="500">
 
     <Grid Margin="0,0,0,51">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center"  Margin="156,50,66,367" TextWrapping="Wrap" VerticalAlignment="Center" Padding="3" FontSize="20" Foreground="Black"  Text="Customize Your Desk:" Width="278"/>
@@ -22,11 +22,11 @@
         <Label x:Name="thematerial" Content="Material:" HorizontalAlignment="Left" Margin="61,218,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,220,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Material" SelectionChanged="ComboBox_MaterialChanged"/>
 
-        <Label x:Name="theshipping" Content="Rush Shipping:" HorizontalAlignment="Left" Margin="61,302,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+        <Label x:Name="theshipping" Content="Rush Shipping (in days):" HorizontalAlignment="Left" Margin="61,302,0,0" VerticalAlignment="Top" Width="203" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,302,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Shipping" SelectionChanged="ComboBox_ShippingChanged"/>
 
         <TextBlock x:Name="welcome" HorizontalAlignment="Center"  Margin="67,10,-40,406" TextWrapping="Wrap" VerticalAlignment="Center" Padding="3" FontSize="20" FontWeight="Bold" Foreground="Black"  Text="Welcome to the Desk Ordering System:" Width="473"/>
-        <Label x:Name="thedrawers" Content="Drawers:" HorizontalAlignment="Left" Margin="67,262,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
+        <Label x:Name="thedrawers" Content="Drawers:" HorizontalAlignment="Left" Margin="61,262,0,0" VerticalAlignment="Top" Width="155" FontSize="18"/>
         <ComboBox HorizontalAlignment="Center" Margin="301,264,48,0" VerticalAlignment="Top" Width="151" Loaded="comboBox_Drawers" SelectionChanged="ComboBox_DrawersChanged" RenderTransformOrigin="0.481,2.607"/>
     </Grid>
 </Page>

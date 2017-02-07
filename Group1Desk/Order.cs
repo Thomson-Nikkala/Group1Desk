@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,19 +13,19 @@ namespace Group1Desk
     {
         public Desk yourDesk { get; set; }
         public OrderSpeed speed { get; set; }
-        public static int BasePrice = 20000;
+        public static int BasePrice = 200;
 
         public int getSurfaceAreaPrice()
         {
-            double surfaceArea=yourDesk.getSurfaceArea();
+            int surfaceArea = yourDesk.getSurfaceArea();
             if (surfaceArea <= 1000)
                 return 0;
-            else return (int)(surfaceArea - 1000) * 500;
+            else return (int)(surfaceArea - 1000) * 5;
         }
-        
+
         public int getDrawersPrice()
         {
-            return 5000 * yourDesk.drawers;
+            return 50 * yourDesk.drawers;
         }
 
         public int getSurfaceTypePrice()
@@ -32,11 +33,11 @@ namespace Group1Desk
             switch (yourDesk.surfaceType)
             {
                 case SurfaceMaterial.laminate:
-                    return 10000;
+                    return 100;
                 case SurfaceMaterial.oak:
-                    return 20000;
+                    return 200;
                 case SurfaceMaterial.pine:
-                    return 5000;
+                    return 50;
                 default:  // this should never be triggered
                     return 0;
             }
@@ -46,10 +47,27 @@ namespace Group1Desk
         {
             int i;
             int j;
-            int[,] rushOrderArray;
+            int[,] rushOrderArray = new int[3,3];
             double surfaceArea = yourDesk.getSurfaceArea();
 
-            //read rushOrderArray in here
+            //read rushOrderArray 
+            try
+            {
+                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                int readLineCounter = 0;
+                for (int k = 0; k < rushOrderArray.GetLength(0); k++)
+                {
+                    for (int m = 0; m < rushOrderArray.GetLength(1); m++)
+                    {
+                        rushOrderArray[k, m] = int.Parse(rushPrices[readLineCounter]); 
+                        readLineCounter++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             switch (speed)
             {
@@ -77,6 +95,28 @@ namespace Group1Desk
             int totalPrice;
             totalPrice = BasePrice + this.getSurfaceAreaPrice() + this.getDrawersPrice() + this.getSurfaceTypePrice() + this.getSpeedPrice();
             return totalPrice;
+        }
+
+        // read in the text file to populate rushOrderArray    
+        private static void ReadRushOrderPrices(ref int[,] rushOrderArray)
+        {
+            try
+            {
+                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                int readLineCounter = 0;
+                for (int i = 0; i < rushOrderArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < rushOrderArray.GetLength(1); j++)
+                    {
+                        rushOrderArray[i, j] = int.Parse(rushPrices[readLineCounter]); 
+                        readLineCounter++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Group1Desk
 {
     public enum SurfaceMaterial { pine, laminate, oak, poplar, alder };
-
+    
     public class Desk
     {
         public int width { get; set; }
@@ -15,9 +15,9 @@ namespace Group1Desk
         public int drawers { get; set; }
         public SurfaceMaterial surfaceType { get; set; }
 
-        public double getSurfaceArea()
+        public int getSurfaceArea()
         {
-            double area;
+            int area;
             area = width * length;
             return area;
         }
