@@ -83,23 +83,23 @@ namespace Group1Desk
         private void button_Click(object sender, RoutedEventArgs e)
         {
             // save desk and order to file here
-       //     string[] lines = {
+            string[] lines = {
         //                "{",
-        //                string.Format("\"deskWidth\":{0},",yourOrder.yourDesk.width),
-        //                string.Format("\"deskLength\":{0},",yourDesk.length),
-        //                string.Format("\"numDrawers\":{0},",yourDesk.drawers),
-        //                string.Format("\"surfaceMaterial\":\"{0}\",",surfaceMaterial),
-          //              string.Format("\"shippingSpeed\":\"{0}\",",shippingSpeed),
-       //                 string.Format("\"BaseDeskPrice\":200,"),
-       //                 string.Format("\"priceFromSurfaceArea\":{0},",priceFromSurfaceArea),
-        //                string.Format("\"priceFromDrawers\":{0},",priceFromDrawers),
-         //               string.Format("\"surfaceMaterialFee\":{0},",surfaceMaterialFee),
-         //               string.Format("\"deliveryFee\":{0},",deliveryFee),
-         //               string.Format("\"deskPrice\":{0},",deskPrice),"}"
-         //           };
+                        string.Format("\"deskWidth\":{0},", order.yourDesk.width),
+                        string.Format("\"deskLength\":{0},", order.yourDesk.length),
+                        string.Format("\"numDrawers\":{0},", order.yourDesk.drawers),
+                       // string.Format("\"surfaceMaterial\":\"{0}\",", order.yourDesk.surfaceMaterial),
+                       // string.Format("\"shippingSpeed\":\"{0}\",", order.yourDesk.shippingSpeed),
+                        string.Format("\"BaseDeskPrice\":200,"),
+                        string.Format("\"priceFromSurfaceArea\":{0},",order.getSurfaceAreaPrice()),
+                        string.Format("\"priceFromDrawers\":{0},", order.getDrawersPrice()),
+                        string.Format("\"surfaceMaterialFee\":{0},", order.getSurfaceTypePrice()),
+                        string.Format("\"deliveryFee\":{0},", order.getSpeedPrice()),
+                       string.Format("\"deskPrice\":{0},",order.getTotalPrice()),"}"
+                    };
          
             //write string to file
-          //  System.IO.File.WriteAllLines(@outputFileName, lines);
+            //System.IO.File.WriteAllLines(order.@outputFileName, lines);
         
             Environment.Exit(0);   // end program
         }
