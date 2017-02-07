@@ -38,6 +38,10 @@ namespace Group1Desk
                     return 200;
                 case SurfaceMaterial.pine:
                     return 50;
+                case SurfaceMaterial.alder:
+                    return 250;
+                case SurfaceMaterial.poplar:
+                    return 75;
                 default:  // this should never be triggered
                     return 0;
             }
@@ -53,7 +57,7 @@ namespace Group1Desk
             //read rushOrderArray 
             try
             {
-                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                string[] rushPrices = File.ReadAllLines(@"C:\Users\Nikkala\Source\Repos\Group1Desk\Group1Desk\rushOrderPrices.txt");
                 int readLineCounter = 0;
                 for (int k = 0; k < rushOrderArray.GetLength(0); k++)
                 {
@@ -64,6 +68,7 @@ namespace Group1Desk
                     }
                 }
             }
+
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);

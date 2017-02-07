@@ -43,6 +43,8 @@ namespace Group1Desk
             getDrawersPrice.Content = order.getDrawersPrice();
             getSurfaceAreaPrice.Content =  order.getSurfaceAreaPrice();
             getSurfaceTypePrice.Content =  order.getSurfaceTypePrice();
+            getSpeedPrice.Content = order.getSpeedPrice();
+            getTotalPrice.Content = order.getTotalPrice();
         }
 
         private Desk desk;
@@ -83,24 +85,24 @@ namespace Group1Desk
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-             //save desk and order to file here
-                    string[] lines = {
-                        "{",
-                        string.Format("\"deskWidth\":{0},", order.yourDesk.width),
-                        string.Format("\"deskLength\":{0},",order.yourDesk.length),
-                       string.Format("\"numDrawers\":{0},", getDrawersPrice),
-                       string.Format("\"surfaceMaterial\":\"{0}\",", order.yourDesk.surfaceType),
-                       string.Format("\"shippingSpeed\":\"{0}\",", order.speed),
-                       string.Format("\"BaseDeskPrice\":200,"),
-                        string.Format("\"priceFromSurfaceArea\":{0},", order.getSurfaceAreaPrice()),
-                        string.Format("\"priceFromDrawers\":{0},", order.getDrawersPrice()),
-                        string.Format("\"surfaceMaterialFee\":{0},", order.getSurfaceTypePrice()),
-                        string.Format("\"deliveryFee\":{0},", order.getSpeedPrice()),
-                        string.Format("\"deskPrice\":{0},", order.getTotalPrice()),"}"
-                    };
+            // save desk and order to file here
+            string[] lines = {
+                   "{",
+                        string.Format("\"width\":{0},", order.yourDesk.width),
+                        string.Format("\"length\":{0},", order.yourDesk.length),
+                        string.Format("\"drawers\":{0},", order.yourDesk.drawers),
+                        string.Format("\"surfaceType\":\"{0}\",", order.yourDesk.surfaceType),
+                        string.Format("\"speed\":\"{0}\",", order.speed),
+                        string.Format("\"BasePrice\":200,"),
+                        string.Format("\"surfaceAreaPrice\":{0},",order.getSurfaceAreaPrice()),
+                        string.Format("\"drawersPrice\":{0},", order.getDrawersPrice()),
+                        string.Format("\"surfaceTypePrice\":{0},", order.getSurfaceTypePrice()),
+                        string.Format("\"speedPrice\":{0},", order.getSpeedPrice()),
+                       string.Format("\"totalPrice\":{0},",order.getTotalPrice()),"}"
+            };
          
             //write string to file
-            System.IO.File.WriteAllLines(@"output.json", lines);
+            System.IO.File.WriteAllLines("output.json", lines);
         
             Environment.Exit(0);   // end program
         }
