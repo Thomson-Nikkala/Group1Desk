@@ -50,7 +50,24 @@ namespace Group1Desk
             int[,] rushOrderArray = new int[3,3];
             double surfaceArea = thisDesk.getSurfaceArea();
 
-            //read rushOrderArray in here
+            //read rushOrderArray 
+            try
+            {
+                string[] rushPrices = File.ReadAllLines(@"rushOrderPrices.txt");
+                int readLineCounter = 0;
+                for (int k = 0; k < rushOrderArray.GetLength(0); k++)
+                {
+                    for (int m = 0; m < rushOrderArray.GetLength(1); m++)
+                    {
+                        rushOrderArray[k, m] = int.Parse(rushPrices[readLineCounter]) * 100; //adjusting for cents
+                        readLineCounter++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             switch (shipTime)  // shipping time in days
             {
