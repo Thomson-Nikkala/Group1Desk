@@ -39,11 +39,10 @@ namespace Group1Desk
             this.order = order;
             this.DataContext = this;
 
-            BasePrice.Content = "Base Desk Price: " + Order.BasePrice;
-            getDrawersPrice.Content = order.yourDesk.drawers + " Added Drawers : " + order.getDrawersPrice();
-
-            getSpeedPrice.Content = order.getSpeedPrice();
-            getTotalPrice.Content = order.getTotalPrice();
+            BasePrice.Content = Order.BasePrice;
+            getDrawersPrice.Content = order.getDrawersPrice();
+            getSurfaceAreaPrice.Content =  order.getSurfaceAreaPrice();
+            getSurfaceTypePrice.Content =  order.getSurfaceTypePrice();
         }
 
         private Desk desk;
