@@ -42,6 +42,8 @@ namespace Group1Desk
             BasePrice.Content = "Base Desk Price: " + Order.BasePrice;
             getDrawersPrice.Content = order.yourDesk.drawers + " Added Drawers : " + order.getDrawersPrice();
 
+            getSpeedPrice.Content = order.getSpeedPrice();
+            getTotalPrice.Content = order.getTotalPrice();
         }
 
         private Desk desk;
